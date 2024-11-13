@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Face-Detection</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            }
+            #video {
+                object-fit: cover;
+                border: 4px solid rgb(146, 77, 77);
+                border-radius: 20px;
+                box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+            }
+
+            canvas {
+                position: absolute;
+            }
+
+            #start-btn,
+            #stop-btn {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                font-size: 20px;
+                font-weight: bold;
+                background-color: rgba(12, 158, 12, 0.877);
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.5s;
+            }
+
+            #stop-btn {
+                top: 100px;
+                padding-right: 32px;
+                background-color: rgba(158, 12, 12, 0.877);
+            }
+
+            #start-btn:hover {
+                background-color: rgba(2, 80, 2, 0.977);
+            }
+
+            #stop-btn:hover {
+                background-color: rgba(87, 5, 5, 0.9);
+            }
+
+            #stop-btn:active {
+                transform: scale(0.9);
+                background-color: rgba(158, 12, 12, 0.5);
+            }
+
+            #start-btn:active {
+                transform: scale(0.9);
+                background-color: rgba(2, 80, 2, 0.5);
+            }
+        </style>
+        <script defer src="face-api.min.js"></script>
+        <script defer src="script.js"></script>
+    </head>
+    <body>
+        <video id="video" width="720" height="560" autoplay muted></video>
+        <button id="start-btn">START Face-Detection</button>
+        <button id="stop-btn">STOP Face-Detection</button>
+    </body>
+</html>
